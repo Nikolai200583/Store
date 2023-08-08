@@ -1,5 +1,4 @@
-import { useAppDispatch } from '../../hooks';
-import { removeItem } from '../../store/slice';
+
 interface ItemsCart {
   id: string;
   url: string;
@@ -13,12 +12,13 @@ interface ItemsProps {
   item: ItemsCart,
   increase: (id:string) => void;
   decrease: (id:string) => void;
-  changeValue: (id: string, value: number) => void;
+  
+  removeitem: (id: string) => void;
 }
-export const CartItem: React.FC<ItemsProps> = ({item, increase, decrease, changeValue }) => {
+export const CartItem: React.FC<ItemsProps> = ({item, increase, decrease, removeitem }) => {
   const {id, url, title, about, price, count } = item; 
   const priceFormator = new Intl.NumberFormat();
-  const dispatch = useAppDispatch();
+ 
   
   return (
     <div className="cart__item">
@@ -36,7 +36,7 @@ export const CartItem: React.FC<ItemsProps> = ({item, increase, decrease, change
           <p className="cart__item_price">{priceFormator.format(price)} руб.</p>
           <div className="cart__item_link_box">
             <span className="cart__item_link">Избранное</span>
-            <span onClick={() => dispatch(removeItem(id))} className="cart__item_link">Удалить</span>
+            <span onClick={()=>removeitem(id)} className="cart__item_link">Удалить</span>
           </div>
         </div>
       </div>
@@ -47,8 +47,7 @@ export const CartItem: React.FC<ItemsProps> = ({item, increase, decrease, change
       </div>
       <input
         className="cart__input"
-        value={count}
-        onChange={(e)=>{changeValue(id, +e.target.value)}}        
+        value={count}             
         type="number"
         min="1"
         max="5"

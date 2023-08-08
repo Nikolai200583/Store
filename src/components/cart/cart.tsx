@@ -2,18 +2,22 @@ import { CartForm } from "../cartForm/cartForm";
 import { CartContent } from "../cartContent/cartContent";
 import { useState, useEffect } from "react";
 import { useAppSelector } from "../../hooks";
+import { useAppDispatch } from '../../hooks';
+import { removeItem } from '../../store/slice';
+
 
 export const CartContainer: React.FC = () => {
   const data = useAppSelector((state) => state.items.list);
-
+  const dispatch = useAppDispatch();
   const [items, setItems] = useState(data);
+
   const [total, setTotal] = useState(
     items.reduce((prev, curr) => prev + curr.total, 0)
   );
 
   useEffect(() => {
     setTotal(items.reduce((prev, curr) => prev + curr.total, 0));
-  }, [items]);
+  },[items]);
 
   const increase = (id: string) => {
     setItems((items) => {
@@ -44,27 +48,19 @@ export const CartContainer: React.FC = () => {
         return item;
       });
     });
-  };
-  const changeValue = (id: string, value: number) => {
-    setItems((items) => {
-      return items.map((item) => {
-        if (item.id === id) {
-          return {
-            ...item,
-            count: value,
-            total: value * item.price
-          };
-        }
-        return item;
-      });
-    });
-  };
+  };  
+
+  const removeitem = (id: string) => {
+    dispatch(removeItem(id));
+    setItems(data)
+  }
+ 
   return (
     <div className="cartContainer center">
-      <CartContent
+      <CartContent items={items}
         increase={increase}
-        decrease={decrease}
-        changeValue={changeValue}
+        decrease={decrease}       
+        removeitem={removeitem}
       />
       <CartForm total={total} />
     </div>
