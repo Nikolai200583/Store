@@ -1,0 +1,48 @@
+
+.top {
+  height: 400px;
+  background-image: url(../public/img/heder_catalog.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 64px;
+}
+.header {
+  height: 76px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.8);
+
+  &__logo {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+  }
+  &__title {
+    width: 270px;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 70px;
+    color: #ffffff;
+    margin-top: 127px;
+    margin-bottom: 126px;
+  }
+}
+.navigation {
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  gap: 32px;
+
+  &__link {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #ffffff;
+  }
+}
