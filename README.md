@@ -9,6 +9,6 @@
 - препроцессор SASS/SCSS; (StyledComponents был бы предпочтительней!)
 - Grid Layout;
 - FlexBox;
-  и немножечко PropsDrilling.
+- Немножечко PropsDrilling.
 
 
