@@ -25,6 +25,9 @@ a {
 .item__img {
   cursor: pointer;
 }
+.item__img:active {
+  border: 1px solid rgb(0, 0, 0);
+}
 .item__about {
   font-style: normal;
   font-weight: 400;
