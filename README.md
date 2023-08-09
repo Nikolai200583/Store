@@ -9,6 +9,6 @@
 - препроцессор SASS/SCSS; (StyledComponents был бы предпочтительней!)
 - Grid Layout;
 - FlexBox
-  и немножечко PropDrilling.
+  и немножечко PropsDrilling.
 
-!!Удаление компонентов из корзины произодится двойным кликом!!
+

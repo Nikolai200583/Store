@@ -14,6 +14,9 @@ export const CartContainer: React.FC = () => {
   const [total, setTotal] = useState(
     items.reduce((prev, curr) => prev + curr.total, 0)
   );
+  useEffect(() => {
+    setItems(data);
+  },[data]);
 
   useEffect(() => {
     setTotal(items.reduce((prev, curr) => prev + curr.total, 0));
@@ -49,10 +52,8 @@ export const CartContainer: React.FC = () => {
       });
     });
   };  
-
   const removeitem = (id: string) => {
-    dispatch(removeItem(id));
-    setItems(data)
+      dispatch(removeItem(id));   
   }
  
   return (

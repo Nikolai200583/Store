@@ -47,7 +47,7 @@ export const CartContent: React.FC<ItemsProps> = (props) => {
         >
           Очистить корзину
         </button>
-        <button onClick={() => navigator()} className="cart__button_continue">
+          <button onClick={() => navigator()} className="cart__button_continue">
           Продолжить покупки
         </button>
       </div>
