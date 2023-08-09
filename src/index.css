@@ -1,6 +1,8 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -137,6 +139,10 @@ a {
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
+}
+
+.menu_mob {
+  display: none;
 }
 
 .cart__form {
@@ -435,4 +441,108 @@ input::-webkit-inner-spin-button {
 .cart__button_continue:hover {
   color: #ffffff;
   background-color: #000000;
+}
+
+@media (max-width: 767px) {
+  .center {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .top {
+    margin-bottom: 32px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-around;
+    gap: 350px;
+    padding-top: 32px;
+    border: none;
+  }
+  .header_input {
+    display: none;
+  }
+  .navigation {
+    display: none;
+  }
+  .logo_img {
+    width: 99px;
+  }
+  .menu_mob {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+  .header__title {
+    font-size: 48px;
+    line-height: 59px;
+    text-align: center;
+  }
+  .select {
+    font-size: 14px;
+  }
+  .catalogItemsBox {
+    margin-left: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  .item__about {
+    width: 343px;
+    margin-bottom: 8px;
+  }
+  .item__price {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .item {
+    display: grid;
+    grid-column: 1/-1;
+  }
+  /*    корзина   */
+  .cartContainer {
+    margin-top: 92px;
+    grid-template-columns: repeat(8, 1fr);
+    row-gap: 64px;
+  }
+  .cart {
+    margin-top: 92px;
+  }
+  .cart__name_box {
+    display: none;
+  }
+  .cart__img {
+    display: none;
+  }
+  .cart__item {
+    justify-content: space-around;
+  }
+  .cart__item_name {
+    Font-size: 18px;
+    Line-height: 22px;
+  }
+  .cart__item_text {
+    Font-size: 12px;
+    Line-height: 15px;
+  }
+  .cart__item_price {
+    Font-size: 12px;
+    Line-height: 15px;
+  }
+  .cart__form_button {
+    gap: 10px;
+    justify-content: center;
+  }
+  .cart__button_clear {
+    width: 166px;
+    font-size: 12px;
+  }
+  .cart__button_continue {
+    color: aliceblue;
+    width: 166px;
+    font-size: 12px;
+    background: black;
+  }
+  .cart__form {
+    grid-column: span 8;
+    margin-left: 30px;
+  }
 }/*# sourceMappingURL=index.css.map */
