@@ -8,7 +8,7 @@
 - '@reduxjs/toolkit;
 - препроцессор SASS/SCSS; (StyledComponents был бы предпочтительней!)
 - Grid Layout;
-- FlexBox
+- FlexBox;
   и немножечко PropsDrilling.
 
 
